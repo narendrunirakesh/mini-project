@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <strong>
+            <h1>ADD INVENTORY</h1>
+        </strong>
+        <style>
+            h1{
+                background-image: linear-gradient(to right, rgba(255, 106, 0, 0), rgba(255,0,0,1));
+                color: white;
+                text-align: center;
+                width: 50%;
+                margin-left: 290px;
+            }
+            body{
+                margin: 0px;
+            }
+            .container{
+               text-align: center;
+               background-image: linear-gradient(red, yellow, green);
+               width: 50%;
+               float:left;
+               margin-left: 25%;
+               padding-top: 60px;
+
+            }
+            #t1{
+              margin-left: 50px;
+            }
+            #t2{
+                margin-left: 30px;
+            }
+            #t3{
+                margin-left: 10px;
+            }
+            #t4{
+                margin-left: 35px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <form action="{% url 'createurl' %}" method='post'>
+                {% csrf_token %}
+                productid <input type="text" name="prodid" id="t1"><br><br>
+                productname <input type="text" name="prodname" id="t2"><br><br>
+                productcategory <input type="text" name="prodcategory" id="t3"><br><br>
+                productprice <input type="text" name="prodprice" id="t4"><br><br>
+                <!--<button>Save</button>-->
+                <input type="submit" value="save"><br><br><br><br>
+            </form>
+    
+        </div>
+        
+        {% for msg in messages %}
+            <h2>{{msg}}</h2>
+
+        {% endfor %}
+
+        <a href="{% url 'homeurl'%}" style="margin-left: 560px;">BACK</a> <br><br>
+    </body>
+</html>

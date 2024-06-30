@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <time datetime="read"></time>
+        <h1>READ INVENTORY</h1>
+        <style>
+            table{
+                text-align: center;
+                margin: auto;
+            }
+            h1{
+                background-image: linear-gradient(violet, yellow);
+                color: white;
+                text-align: center;
+                width: 59%;
+                margin-left: 290px;
+            }
+            .container{
+                background-image: linear-gradient(violet,yellow);
+                width: 50%;
+                margin-left: 290px;
+                padding: 50px;
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <table border="2px">
+                <tr>
+                    <th>Productid</th>
+                    <th>Productname</th>
+                    <th>productcategory</th>
+                    <th>productprice</th>
+                </tr>
+    
+                {% for obj in emprecords %}
+                <tr>
+    
+                    <td>{{obj.product_id}}</td>
+                    <td>{{obj.product_name}}</td>
+                    <td>{{obj.product_category}}</td>
+                    <td>{{obj.product_price}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+      
+    </body>
+</html>

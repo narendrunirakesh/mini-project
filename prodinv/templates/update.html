@@ -1,0 +1,48 @@
+<!--<html>
+    <head>
+
+    </head>
+
+    <body>
+        <form action=" {% url 'updateproducturl' %}" method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit">Save changes</button>
+
+        </form>
+
+    </body>
+</html>-->
+
+
+
+<html>
+    <head>
+        
+
+    </head>
+    
+
+        <body>
+
+            <form action="{% url 'updateproducturl' %}" method="POST">
+                {% csrf_token %}
+
+                <label for="">product_id</label>
+                <input type="text" name="prodid" id="prodid" value="">
+                <label for="">producr_name</label>
+                <input type="text" name="prodname" id="prodname" value="">
+                <label for="">producr_category</label>
+                <input type="text" name="prodcategory" id="prodcategory" value="">
+                <label for="">producr_price</label>
+                <input type="text" name="prodprice" id="prodprice" value="">
+
+
+                
+            </form>
+        </body>
+    
+</html>
+

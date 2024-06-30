@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <style>
+            .d1{
+                text-align: center;
+                color: red;
+                background-color:pink;
+                padding-top: 10px;
+                width: 50%;
+                margin-left: 300px;
+            }
+            #h1{
+                text-align: center;
+            }
+            .button{
+                font-size: medium;
+                text-align: center;
+                width: 80px;
+                height: 30px;
+                margin-left: 45%;
+                margin-top: 10px;
+                background-color: cadetblue;
+                padding-top: 5px;
+                /* padding-bottom: 20px; */
+            }
+        </style>
+
+    </head>
+    <body>
+        <form action="{% url 'deleteprodurl' record.product_id %}" method="POST">
+            {% csrf_token %}
+            <div class="d1">
+                <h3>Are You Sure!! Do You Want Delete The Below Record</h3>
+                {{record.product_name}} {{record.product_id}} <br><br>
+            </div>
+            <div class="button">
+                <input type="submit" name="" id="" value="Yes">
+            </div>
+
+        </form>
+    </body>
+</html>

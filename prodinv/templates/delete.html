@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <h1>DELETE INVENTORY</h1>
+        <style>
+            .t1{
+                text-align: center;
+                margin-left: 50px;
+                background-image: linear-gradient(to right, rgb(255, 204, 0), rgba(255,0,0,1));
+                width: 30%;
+                margin-left: 400px;
+                margin-top: 10px;
+                padding-top: 10px;
+                
+            }
+            .t2{
+                
+                text-align: center;
+                margin-left: 200px;
+                background-image: linear-gradient(to right, rgb(255, 204, 0), rgba(255,0,0,1));
+                width: 10%;
+                margin-left: 530px;
+                margin-top: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            h1{
+                text-align: center;
+                background-image: linear-gradient(to right, rgb(255, 204, 0), rgba(255,0,0,1));
+                color: white;
+                text-align: center;
+                width: 50%;
+                margin-left: 290px;
+                margin-top: 30px;
+            }
+         
+        </style>
+
+    </head>
+
+    <body>
+
+        <form action="{% url 'deleteurl' %}" method="post">
+            {% csrf_token %}
+
+
+            <div class="container">
+                <div class="t1">
+                    productid  <input type="text" name="prodid" id="t1"><br><br>
+                </div>
+                <div class="t2">
+                    <input type="submit" name="Delete" id="t2"> 
+                </div> 
+            </div>
+        </form>
+
+        <div>
+            {% for msg in messages %}
+                <h2>{{msg}}</h2>
+
+            {% endfor %}
+        </div>
+    </body>
+</html>
